@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Exclusive | Your Brand</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon-rounded.png') }}">
+</head>
+<body class="market-page">
+    <div class="background-glow"></div>
+
+    <nav class="glass-nav">
+        <a href="{{ url_for('home') }}" class="logo" style="text-decoration:none;">YOUR BRAND</a>
+        <div class="nav-links">
+           <a href="{{ url_for('home') }}">HOME</a>
+            <a href="{{ url_for('contact') }}">CONTACT</a>
+            <a href="#" class="active">COLLECTION</a>
+        </div>
+    </nav>
+
+    <main class="content-reveal">
+        <section class="collection-header">
+            <h1 class="main-title">Modern <span>Aesthetics</span></h1>
+            <p class="description">A fusion of Python power and cinematic design. Perfect for showcase websites and premium e-commerce.</p>
+        </section>
+
+       <div class="grid-container">
+ <div class="luxury-card">
+    <a href="{{ url_for('product_detail') }}" class="card-link">
+        <div class="card-img-wrapper">
+            <div class="card-img"></div>
+        </div>
+
+        <div class="card-info">
+            <h3>Your Product</h3>
+            <p>Premium Description</p>
+            <span class="price">$ 000.00</span>
+        </div>
+    </a>
+
+    <a href="{{ url_for('product_detail') }}" class="card-btn-link">
+        <div class="card-btn-luxe">
+            EXPLORE THE PROJECT
+        </div>
+    </a>
+</div>
+    </div>
+</a>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+            </div>
+    </main>
+</body>
+<footer style="text-align: center; padding: 20px; color: rgba(255,255,255,0.3); font-size: 0.8rem;">
+    © 2026 Developed with Passion by <a href="https://contra.com/younes_bouzid" style="color: #D4AF37; text-decoration: none;">Younes Bouzid</a>
+</footer>
+</html>

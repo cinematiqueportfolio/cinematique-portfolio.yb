@@ -1,0 +1,398 @@
+/* * DESIGN BY YOUNES BOUZID
+ * Project: Cinematic Web Design
+ * License: Private / Client Exclusive
+ */
+:root {
+    --gold: #d4af37; /* Or Royal */
+    --dark: #050505; /* Noir Profond */
+    --light-gray: #a0a0a0;
+    --glass: rgba(255, 255, 255, 0.03); /* Effet verre subtil */
+    --border: rgba(255, 255, 255, 0.08); /* Bordure discrète */
+    --animation-cubic: cubic-bezier(0.4, 0, 0.2, 1); /* Fluidité pro */
+}
+
+/* --- STYLES DE BASE & TYPOGRAPHIE --- */
+* { box-sizing: border-box; }
+
+body {
+    background-color: var(--dark);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif; /* Police moderne */
+    margin: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- EFFETS D'ARRIÈRE-PLAN --- */
+.background-glow {
+    position: fixed;
+    top: -10%;
+    left: -10%;
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.07) 0%, transparent 70%);
+    filter: blur(100px);
+    z-index: -1;
+}
+
+/* --- ANIMATIONS DE MOUVEMENT --- */
+.content-reveal {
+    animation: fadeInUp 1.5s var(--animation-cubic);
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- PAGE D'ACCUEIL (INDEX) --- */
+.hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.glass-card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(20px); /* L'effet Glassmorphism */
+    padding: 70px;
+    border-radius: 25px;
+    text-align: center;
+    max-width: 700px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.9);
+}
+
+.subtitle {
+    color: var(--light-gray);
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif; /* Police de luxe classique */
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 5px;
+    margin: 15px 0 25px 0;
+}
+
+h1 span { font-style: italic; color: var(--gold); }
+
+p {
+    color: #c0c0c0;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* --- LE BOUTON DORÉ (GOLDEN BUTTON) --- */
+.btn-gold {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: all 0.5s var(--animation-cubic);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-gold:hover {
+    background-color: var(--gold);
+    color: #000000;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+}
+
+/* --- PAGE BOUTIQUE (MARKET) --- */
+.glass-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 10%;
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* --- NAVIGATION & LOGO --- */
+.logo {
+    font-family: 'Playfair Display', serif; /* Ou ta police actuelle */
+    color: var(--gold); /* Ou ta couleur or actuelle */
+    font-size: 1.5rem; /* Ou ta taille actuelle */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    /* --- AJOUTE CETTE LIGNE --- */
+    text-decoration: none !important; /* Force la suppression du soulignement */
+}
+
+.nav-links a {
+    color: var(--light-gray);
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a.active, .nav-links a:hover { color: #fff; }
+
+.collection-header { text-align: center; margin: 100px 0; padding: 0 15%; }
+.collection-header .description { font-size: 1.3rem; margin-top: 20px; }
+
+/* --- GRILLE DE PRODUITS --- */
+/* --- GRILLE & CARTES DE LUXE --- */
+.grid-container {
+    display: grid;
+    /* On utilise la grille pour espacer les produits */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 60px; /* Plus d'espace entre les produits pour le luxe */
+    padding: 0 10% 100px 10%;
+}
+
+.luxury-card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 30px; /* Plus d'espace intérieur */
+    transition: all 0.6s var(--animation-cubic);
+    cursor: pointer;
+    overflow: hidden; /* Garde tout propre à l'intérieur */
+}
+
+.luxury-card:hover {
+    transform: translateY(-15px); /* Élévation plus prononcée */
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+}
+
+/* L'Image : Elle doit être grande */
+.card-img-wrapper {
+    width: 100%;
+    height: 400px; /* On impose une grande hauteur */
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #0a0a0a, #1a1a1a); /* Dégradé premium */
+    transition: transform 1s var(--animation-cubic);
+}
+
+/* Animation de l'image au survol de la carte */
+.luxury-card:hover .card-img {
+    transform: scale(1.1); /* Zoom cinématique */
+}
+
+/* Les Informations (Texte) */
+.card-info {
+    text-align: center; /* Centre le texte sous l'image */
+    margin-bottom: 25px;
+}
+
+.card-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #fff;
+    margin: 0 0 8px 0;
+}
+
+.card-info p {
+    color: var(--light-gray);
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.price {
+    color: var(--gold);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 15px;
+    display: block;
+}
+
+/* --- LE BOUTON LUXE (SOUS LE PRODUIT) --- */
+.card-btn-link {
+    text-decoration: none;
+    display: block;
+    margin-top: auto; /* Pousse le bouton vers le bas */
+}
+
+.card-btn-luxe {
+    width: 100%;
+    padding: 18px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 50px; /* Bouton très arrondi comme ton image */
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+/* Effet au survol du bouton */
+.card-btn-luxe:hover {
+    background: var(--gold);
+    color: #000;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.5); /* Effet de lueur */
+}
+
+/* Reset des liens */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.luxury-card:hover {
+    transform: translateY(-12px);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+}
+
+.card-img {
+    height: 350px;
+    background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+    border-radius: 15px;
+    margin-bottom: 25px;
+    transition: background 0.5s ease;
+}
+
+.luxury-card:hover .card-img {
+    background: linear-gradient(145deg, #111, #222);
+}
+
+.card-info h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #fff; margin: 0 0 8px 0; }
+.card-info p { color: var(--light-gray); margin: 0; font-size: 1rem; }
+.price { color: var(--gold); font-size: 1.3rem; font-weight: 600; margin-top: 15px; display: block; }
+/* --- PRODUCT DETAIL PAGE --- */
+.product-container {
+    display: flex;
+    height: calc(100vh - 80px);
+    align-items: center;
+}
+
+.product-image-wrapper {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    background: #0a0a0a;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #111, #222); /* Remplace par une image plus tard */
+    transition: transform 1.5s var(--animation-cubic);
+}
+
+.product-image-wrapper:hover .main-image {
+    transform: scale(1.1); /* L'effet de zoom cinématique */
+}
+
+.product-details {
+    flex: 1;
+    padding: 0 8%;
+}
+
+.category { color: var(--gold); letter-spacing: 4px; font-size: 0.7rem; }
+.product-title { font-size: 3.5rem; margin: 10px 0; }
+.price-tag { font-size: 2rem; color: #fff; margin-bottom: 40px; font-weight: 300; }
+
+.specs { border-top: 1px solid var(--border); padding-top: 30px; margin-bottom: 30px; }
+.spec-item { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 0.9rem; }
+.spec-item span { color: var(--light-gray); }
+
+.btn-gold-fill {
+    width: 100%;
+    padding: 20px;
+    background: var(--gold);
+    color: #000;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.btn-gold-fill:hover { opacity: 0.9; }
+/* --- RESET DES LIENS DE CARTES --- */
+.card-link {
+    text-decoration: none !important; /* Force la suppression du soulignement */
+    color: inherit;                  /* Garde la couleur blanche du texte */
+    display: block;                  /* Assure que toute la zone est cliquable */
+    outline: none;                   /* Enlève la bordure de sélection au clic */
+}
+
+/* On s'assure que même au survol, la ligne ne revient pas */
+.card-link:hover {
+    text-decoration: none;
+}
+/* --- CONTACT PAGE STYLES --- */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    padding: 40px 20px;
+}
+
+.glass-form {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(25px);
+    border: 1px solid var(--border);
+    padding: 60px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.glass-form h1 { font-size: 3rem; margin-bottom: 40px; }
+
+.input-group { margin-bottom: 25px; }
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 15px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.4s ease;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    border-bottom-color: var(--gold);
+}
+
+.glass-form .btn-gold-fill {
+    margin-top: 20px;
+    border-radius: 50px;
+}

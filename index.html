@@ -1,0 +1,38 @@
+<nav class="glass-nav">
+    <a href="{{ url_for('home') }}" class="logo">YOUR BRAND</a>
+    <div class="nav-links">
+        <a href="{{ url_for('home') }}">HOME</a>
+        <a href="{{ url_for('market') }}">COLLECTION</a>
+        <a href="{{ url_for('contact') }}">CONTACT</a>
+    </div>
+</nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematic Web Experience | Your Brand</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon-rounded.png') }}">
+</head>
+<script>
+    console.log("%c Developed by Younes Bouzid ", "color: #D4AF37; font-size: 20px; font-weight: bold; background: #000; padding: 10px; border-radius: 5px;");
+    console.log("Check out my services on Contra: https://contra.com/younes_bouzid");
+</script>
+<body class="home-page">
+    <div class="background-glow"></div>
+
+    <div class="hero-container">
+        <div class="glass-card content-reveal">
+            <span class="subtitle">PREMIUM DIGITAL FOUNDATION</span>
+            <h1>Cinematic <span>Web</span></h1>
+            <p>A high-end Flask boilerplate designed for brands that require elegance, performance, and professional backend logic.</p>
+        <a href="{{ url_for('market') }}" class="btn-gold">DISCOVER THE PROJECT</a>
+        </div>
+    </div>
+</body>
+<footer style="text-align: center; padding: 20px; color: rgba(255,255,255,0.3); font-size: 0.8rem;">
+    © 2026 Developed with Passion by <a href="https://contra.com/younes_bouzid" style="color: #D4AF37; text-decoration: none;">Younes Bouzid</a>
+</footer>
+</html>

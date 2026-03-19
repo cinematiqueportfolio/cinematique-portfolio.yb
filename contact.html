@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start a Project | Your Brand</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon-rounded.png') }}">
+</head>
+<body class="contact-page">
+    <div class="background-glow"></div>
+    <nav class="glass-nav">
+        <a href="{{ url_for('home') }}" class="logo">YOUR BRAND</a>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">HOME</a>
+            <a href="{{ url_for('market') }}">COLLECTION</a>
+        </div>
+    </nav>
+
+    <div class="contact-container content-reveal">
+        <div class="glass-form">
+            <span class="subtitle">INQUIRIES</span>
+            <h1>Let's build <span>something</span> iconic.</h1>
+
+            <form action="#">
+                <div class="input-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <textarea placeholder="Tell me about your project" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn-gold-fill">SEND INQUIRY</button>
+            </form>
+        </div>
+    </div>
+</body>
+<footer style="text-align: center; padding: 20px; color: rgba(255,255,255,0.3); font-size: 0.8rem;">
+    © 2026 Developed with Passion by <a href="https://contra.com/younes_bouzid" style="color: #D4AF37; text-decoration: none;">Younes Bouzid</a>
+</footer>
+</html>
